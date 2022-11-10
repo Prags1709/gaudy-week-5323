@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
     <title>ExpoWilde</title>
-    <style>
-      /* * {
-        margin: 0px;
-      } */
+    <!-- <style>
+      * {
+        background-color: white;
+      }
+
+      /* navigation bar */
       .nav {
         display: flex;
         height: 60px; 
-        border: 1px solid black;
+        /* border: 1px solid black; */
         justify-content: space-between;
+        /* position: fixed; */
       }
 
       .nav>div:nth-child(1) {
         display: flex;
         justify-content: space-between;
         width: 70%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
       }
 
       .nav>div:nth-child(2) {
         display: flex;
         align-items: center;
         width: 23%;
-        border: 1px solid green;
+        /* border: 1px solid green; */
       }
 
       .nav>div:nth-child(2)>button {
@@ -36,7 +40,7 @@
 
       .nav>div:nth-child(1)>div:nth-child(1) {
         width: 20%;
-        border: 1px solid gold;
+        /* border: 1px solid gold; */
       }
 
       .nav>div:nth-child(1)>div>img {
@@ -49,7 +53,7 @@
         justify-content: space-between;
         align-items: center;
         width: 70%;
-        border: 1px solid purple;
+        /* border: 1px solid purple; */
       }
 
       .nav>div:nth-child(1)>div:nth-child(2)>div {
@@ -57,36 +61,39 @@
       }
 
       .dropbut {
-        /* background-color: #04AA6D; */
-        /* color: white; */
-        padding: 16px;
-        font-size: 16px;
-        border: none;
+            /* background-color: #04AA6D; */
+            /* color: white; */
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(207, 138, 228);
         }
 
         .drop {
-        position: relative;
-        display: inline-block;
+            position: relative;
+            display: inline-block;
         }
 
         .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 10px;
         }
 
         .dropdown-content a {
-        color: black;
-        padding: 5px 7px;
-        text-decoration: none;
-        display: block;
+            color: blue;
+            padding: 5px 7px;
+            text-decoration: none;
+            display: block;
         }
 
         .dropdown-content a:hover {
             background-color: rgb(192, 119, 188);
+            color: white;
         }
 
         .drop:hover .dropdown-content {
@@ -95,22 +102,45 @@
 
         .drop:hover .dropbut {
             background-color: lightpink;
+            color: rebeccapurple;
         }
+
+        /* top section */
 
         .top {
             display: flex;
             justify-content: space-between;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin-top: 30px;
+        }
+
+        .top>div>h1 {
+            color: rgb(169, 64, 218);
+           
         }
 
         .top>div:nth-child(1) {
             padding: 20px;
+            margin: 10px;
+        }
+
+        .butn {
+            padding: 10px;
+            border-radius: 19px;
+            border: 0px;
+            font-weight: 600;
+            background-color: rgba(255, 0, 255, 0.3);
+            margin: 5px;
+        }
+
+        .butn:hover {
+            transform: scale(1.1);
+            transition: 200ms;
         }
 
         .top>div:nth-child(2) {
             border-radius: 15px 50px;
-            border: 1px solid green;
+            /* border: 1px solid green; */
             margin: 10px;
         }
 
@@ -118,11 +148,88 @@
             width: 70%;
         }
 
+        /* moving slide */
+
+        .slider {
+            /* border: 1px solid rebeccapurple; */
+            height: 250px;
+            margin: auto;
+            position: relative;
+            width: 90%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .slide_track {
+            /* border: 1px solid yellowgreen; */
+            display: flex;
+            width: calc(250px*22);
+            animation: scroll 40s linear infinite;
+        }
+
+        .slide_track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 11));
+            }
+        }
+
+        .slide {
+            /* border: 1px solid olive; */
+            width: 200px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            perspective: 100px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        img:hover {
+            transform: translateZ(20px);
+        }
+
+        .slider::before,
+        .slider::after {
+            background: linear-gradient(to right, rgba(255, 255, 255,1) 0%,
+            rgba(255, 255, 255, 0) 100%);
+            content: '';
+            height: 100%;
+            position: absolute;
+            width: 15%;
+            z-index: 2;
+        }
+
+        .slider::before {
+            left: 0;
+            top: 0;
+        }
+
+        .slider::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        /* top2 section */
+
         .top2 {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
 
         .top2>div:nth-child(1) {
@@ -151,6 +258,10 @@
             transition: 500ms;
         }
 
+        .top2>div:nth-child(2)>div>img {
+            width: 40%;
+        }
+
         .cent {
             text-align: center;
         }
@@ -159,17 +270,22 @@
             color: rgb(49, 49, 161);
         }
 
+        /* middle section */
+
         .mid {
             display: flex;
             justify-content: space-evenly;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin-top: 30px;
             padding: 10px;
+           
         }
 
         .mid>div {
             font-weight: 900;
         }
+
+        /* info section */
 
         .info {
             display: grid;
@@ -177,9 +293,10 @@
             grid-template-rows: auto;
             gap: 30px;
             width: 80%;
-            border: 1px solid chartreuse;
+            /* border: 1px solid chartreuse; */
             margin: auto;
             padding-top: 30px;
+            /* position: fixed; */
         }
 
         .info>div {
@@ -195,7 +312,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 35px;
-            border: 1px solid orange;
+            /* border: 1px solid orange; */
             margin: auto;
             padding-top: 35px;
         }
@@ -221,6 +338,8 @@
             flex-wrap: wrap;
         }
 
+        /* bottom section */
+
         .bot {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -234,6 +353,8 @@
         .bot>div>h2 {
             color: rgb(28, 79, 190);
         }
+
+        /* media section */
 
         .media {
             display: flex;
@@ -257,8 +378,39 @@
             transition: 1s;
         }
 
+        .boom:hover {
+            transform: scale(1.05);
+            transition: 300ms;
+        }
+
+        a {
+            display: block;
+           font-size: 20px;
+           text-decoration: none;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            transition: 300ms;
+        }
+
+        p {
+            color: rgb(97, 90, 90);
+        }
+
+        @media screen and (min-width:450px) and (max-width: 882px)  {
+            .ncont {
+                display: none;
+            }
+
+            .table {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
             
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="nav">
@@ -270,35 +422,55 @@
                 <div class="drop">
                     <button class="dropbut">Product</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <h4>subscription</h4>
+                    <a href="#">Subscription Management</a>
+                    <a href="#">Recurring Billing and Invoicing</a>
+                    <a href="#">Recurring Payments</a>
+                    <a href="#">Accounting and Taxes</a>
+                    <a href="#">Saas Reporting</a>
+                    <h4>Billing Automation</h4>
+                    <a href="#">Overview</a>
+                    <a href="#">Usage Based Billing</a>
+                    <a href="#">Quotes</a>
                   </div>
                 </div>
-                <div>Pricing</div>
+                <div class="ncont">Pricing</div>
                 <div class="drop">
                     <button class="dropbut">Solution</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <h4>By Role</h4>
+                    <a href="#">Finance</a>
+                    <a href="#">Sales</a>
+                    <a href="#">RevOps</a>
+                    <h4>By Industry</h4>
+                    <a href="#">B2B SaaS</a>
+                    <a href="#">eCommerce</a>
+                    <a href="#">Publishing</a>
+                    <a href="#">OTT</a>
                   </div>
                 </div>
-                <div>Customers</div>
+                <div class="ncont">Customers</div>
                 <div class="drop">
                     <button class="dropbut">resources</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Recurring Payments</a>
+                    <a href="#">Webinars</a>
+                    <h4>Business Model</h4>
+                    <a href="#">Event</a>
+                    <a href="#">Glossaries</a>
+                    <a href="#">Academy</a>
+                    <a href="#">Tackling</a>
                   </div>
                 </div>
                 <!-- <div>Partners</div> -->
             </div>
         </div>
         <div>
-            <a href="">Log in ></a>
-            <button>Get a Demo ></button>
+            <!-- <a href="./login.html">Log in ></a> -->
+            <button class="butn login">Login ></button>
+            <button class="butn ncont">Get a Demo ></button>
         </div>
     </div>
     
@@ -308,13 +480,89 @@
     <div>
         <h1>The billing platform that gives<br> Superfoods the freedom to test, <br>iterate, and roll-back.The revenue<br> engine that powered MakeSpace to <br>launch a B2B model overnight.</h1>
         <p>Chargebee is the subscription billing <br>and revenue management platform that<br> lets you solve for your today,<br> and scale for your tomorrow.</p>
-        <button>Get a Demo ></button>
-        <button>Signup For Free ></button>
+        <button class="butn">Get a Demo ></button>
+        <button class="sign butn">Signup For Free ></button>
     </div>
     <div>
         <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/customers/jose-bolanos.webp" alt="">
         <h3>Rahul Louiset</h3>
         <h5>CEO-Rice Vision</h5>
+    </div>
+   </div>
+
+   <!-- moving slide -->
+
+   <div class="slider">
+    <div class="slide_track">
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjpoxwG_eQIJ320spwIu8NfvafmUUcR97dM1XO0xy46NncLzJOnvolh3Ok72imEc9LTzU&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_Jk1XJkGp6SQiksjtFU5JN1bDXkfiwgHxA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdZsp_q33QhdMnlXwlqh8Aw9vVGOBfshN9mQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpCYnWrNxMKn6Ucphh_VGqUly4n_wb_focYQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA08VjpqCUXSCXkH_Q0kjqkw_e69K4IXn3iQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRrfOH_FHEJDEBlRJBcz5IybkxZRbM6MNquw&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT62qwdVluGbc6_r8BfA_bgegeWnW94QDNVMA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhj_n0BviNzvrgdvNHivUSDjfMPjQfIV-kZA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgwpG-IsXNh1lrJPwQjAsuQ1Ir0W40NOa-9w&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1YOu6vBpCJP83wl3YAdAzXaaTcuanMXcsOA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2X3_t2GOIvvoUSeSsa8Y2ow27vv-5d9N_mHa0n3pVPC1lsKuLUK4LEPxjZ7quxxATCs&usqp=CAU" alt="logo">
+        </div>
+
+        <!-- copy the same slide again -->
+
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjpoxwG_eQIJ320spwIu8NfvafmUUcR97dM1XO0xy46NncLzJOnvolh3Ok72imEc9LTzU&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_Jk1XJkGp6SQiksjtFU5JN1bDXkfiwgHxA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdZsp_q33QhdMnlXwlqh8Aw9vVGOBfshN9mQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpCYnWrNxMKn6Ucphh_VGqUly4n_wb_focYQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA08VjpqCUXSCXkH_Q0kjqkw_e69K4IXn3iQ&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRrfOH_FHEJDEBlRJBcz5IybkxZRbM6MNquw&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT62qwdVluGbc6_r8BfA_bgegeWnW94QDNVMA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhj_n0BviNzvrgdvNHivUSDjfMPjQfIV-kZA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgwpG-IsXNh1lrJPwQjAsuQ1Ir0W40NOa-9w&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1YOu6vBpCJP83wl3YAdAzXaaTcuanMXcsOA&usqp=CAU" alt="logo">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2X3_t2GOIvvoUSeSsa8Y2ow27vv-5d9N_mHa0n3pVPC1lsKuLUK4LEPxjZ7quxxATCs&usqp=CAU" alt="logo">
+        </div>
     </div>
    </div>
 
@@ -418,6 +666,7 @@
             <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/integration.svg" alt="img">
         </div>
     </div>
+  
 
     <div class="table">
         <div>
@@ -450,7 +699,7 @@
 
     <div class="bot">
         <div>
-            <h2>Product ></h2>
+            <h2 class="boom">Product ></h2>
             <p>Subscription Management</p>
             <p>Recurring Billing and Invoicing</p>
             <p>Recurring Payments</p>
@@ -459,7 +708,7 @@
             <p>integrations</p>
         </div>
         <div>
-            <h2>Help & Support ></h2>
+            <h2 class="boom">Help & Support ></h2>
             <p>Securoty</p>
             <p>FAQs</p>
             <p>Status</p>
@@ -468,7 +717,7 @@
             <p>Sitemap</p>
         </div>
         <div>
-            <h2>Resources ></h2>
+            <h2 class="boom">Resources ></h2>
             <p>Blog</p>
             <p>Compare Payment Gateways</p>
             <p>Recurring Payments</p>
@@ -479,7 +728,7 @@
             <p>Sub Academy</p>
         </div>
         <div>
-            <h2>Company ></h2>
+            <h2 class="boom">Company ></h2>
             <p>Customers</p>
             <p>Partner</p>
             <p>Careers</p>
@@ -500,3 +749,15 @@
 
 </body>
 </html>
+
+<script>
+    let btn = document.querySelector(".sign")
+    btn.addEventListener("click",function(){
+        window.location.href="./Sign in.html"
+    })
+
+    let but2 = document.querySelector(".login")
+    but2.addEventListener("click",function(){
+        window.location.href="./login.html";
+    })
+</script>
