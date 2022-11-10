@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpoWilde</title>
+    <style>
+      /* * {
+        margin: 0px;
+      } */
+      .nav {
+        display: flex;
+        height: 60px; 
+        border: 1px solid black;
+        justify-content: space-between;
+      }
+
+      .nav>div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        border: 1px solid red;
+      }
+
+      .nav>div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        width: 23%;
+        border: 1px solid green;
+      }
+
+      .nav>div:nth-child(2)>button {
+        margin-left: 20px;
+      }
+
+      .nav>div:nth-child(1)>div:nth-child(1) {
+        width: 20%;
+        border: 1px solid gold;
+      }
+
+      .nav>div:nth-child(1)>div>img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .nav>div:nth-child(1)>div:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        border: 1px solid purple;
+      }
+
+      .nav>div:nth-child(1)>div:nth-child(2)>div {
+       font-size: 20px;
+      }
+
+      .dropbut {
+        /* background-color: #04AA6D; */
+        /* color: white; */
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        }
+
+        .drop {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        color: black;
+        padding: 5px 7px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(192, 119, 188);
+        }
+
+        .drop:hover .dropdown-content {
+            display: block;
+        }
+
+        .drop:hover .dropbut {
+            background-color: lightpink;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+            margin-top: 30px;
+        }
+
+        .top>div:nth-child(1) {
+            padding: 20px;
+        }
+
+        .top>div:nth-child(2) {
+            border-radius: 15px 50px;
+            border: 1px solid green;
+            margin: 10px;
+        }
+
+        .top>div:nth-child(2)>img {
+            width: 70%;
+        }
+
+        .top2 {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            border: 1px solid black;
+        }
+
+        .top2>div:nth-child(1) {
+            padding: 20px;
+        }
+
+        .top2>div:nth-child(2) {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            gap: 15px;
+        }
+
+        .top2>div:nth-child(1)>h1 {
+            color: rgb(196, 130, 226);
+        }
+
+        .top2>div:nth-child(2)>div {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .top2>div:nth-child(2)>div:hover {
+            transform: scale(1.1);
+            transition: 500ms;
+        }
+
+        .cent {
+            text-align: center;
+        }
+
+        .col {
+            color: rgb(49, 49, 161);
+        }
+
+        .mid {
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid black;
+            margin-top: 30px;
+            padding: 10px;
+        }
+
+        .mid>div {
+            font-weight: 900;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            gap: 30px;
+            width: 80%;
+            border: 1px solid chartreuse;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        .info>div {
+            margin: 20px;
+        }
+
+        .info>div>h1 {
+            color: rgb(49, 49, 161);
+        }
+
+        .table {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+            border: 1px solid orange;
+            margin: auto;
+            padding-top: 35px;
+        }
+
+        .table>div:nth-child(1) {
+            width: 30%;
+        }
+
+        .table>div:nth-child(2) {
+            width: 60%;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            border-radius: 12px;
+            padding: 20px;
+
+        }
+
+        .table>image {
+            width: 60%;
+        }
+
+        .table>div:nth-child(2)>div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bot {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 15px;
+            width: 80%;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        .bot>div>h2 {
+            color: rgb(28, 79, 190);
+        }
+
+        .media {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+            /* border: 1px solid black; */
+            padding: 30px;
+        }
+
+        .media>div:nth-child(1)>img {
+            width: 60%;
+        }
+
+        .media>div:nth-child(1):hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        .media>div:nth-child(2):hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+            
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <div>
+                <img src="./E (1).png" alt="logo">
+            </div>
+            <div >
+                <div class="drop">
+                    <button class="dropbut">Product</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div>
+                <div>Pricing</div>
+                <div class="drop">
+                    <button class="dropbut">Solution</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div>
+                <div>Customers</div>
+                <div class="drop">
+                    <button class="dropbut">resources</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div>
+                <!-- <div>Partners</div> -->
+            </div>
+        </div>
+        <div>
+            <a href="">Log in ></a>
+            <button>Get a Demo ></button>
+        </div>
+    </div>
+    
+   <!-- top section -->
+
+   <div class="top">
+    <div>
+        <h1>The billing platform that gives<br> Superfoods the freedom to test, <br>iterate, and roll-back.The revenue<br> engine that powered MakeSpace to <br>launch a B2B model overnight.</h1>
+        <p>Chargebee is the subscription billing <br>and revenue management platform that<br> lets you solve for your today,<br> and scale for your tomorrow.</p>
+        <button>Get a Demo ></button>
+        <button>Signup For Free ></button>
+    </div>
+    <div>
+        <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/customers/jose-bolanos.webp" alt="">
+        <h3>Rahul Louiset</h3>
+        <h5>CEO-Rice Vision</h5>
+    </div>
+   </div>
+
+   <!-- put image slide -->
+
+   <div class="top2">
+    <div>
+        <h1>Designed to go Beyond Billing.</h1>
+        <p>Get the freedom to experiment,<br> launch, and scale strategies as fast <br>as you can think of them.</p>
+    </div>
+    <div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/icon/rethink-pricing.svg" alt="pp">
+            <h3>Rethink Pricing</h3>
+            <p>Pricing models. Grandfathering.<br> One click roll-back. Doesn't get easier!</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/icon/scale-globally.svg" alt="pp">
+            <h3>Scale Globally</h3>
+            <p>Pricing models. Grandfathering. <br>One click roll-back. Doesn't get easier!</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/icon/capture-new-segments.svg" alt="pp">
+            <h3>Capture New Segments</h3>
+            <p>Pricing models. Grandfathering.<br> One click roll-back. Doesn't get easier!</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/icon/launch-into-subscriptions.svg" alt="pp">
+            <h3>launch into subscriptions</h3>
+            <p>Pricing models. Grandfathering.<br> One click roll-back. Doesn't get easier!</p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+   </div>
+
+   <!-- mid section -->
+
+   <h1 class="cent col">Streamline Revenue Operations</h1>
+   <p class="cent">Chargebee automates the lead-to-ledger workflow across your <br> revenue stack, so you can dream, deploy, and enjoy the breeze.<br>
+    While the MRR just keeps rolling.</p>
+
+    <div class="mid">
+        <div>Subscription Automation</div>
+        <div>Billing Experiment</div>
+        <div>Revenue Intelligency</div>
+        <div>Extensible Platform</div>
+        <div>Enterprise-Grade Security</div>
+    </div>
+    <hr>
+
+    <div class="info">
+        <div>
+            <h1>Automate the Order-to-<br>Revenue Lifecycle</h1>
+            <p>Collect recurring payments and<br> automate your subscription billing<br> logic - from checkout to<br> reconciliation.</p>
+            <p>1. Quote-to-Cash</p>
+            <p>2. Trial Management</p>
+            <p>3. Tax Management</p>
+            <p>4. Lifecycle Automation</p>
+            <a href="#">Learn More ></a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/subscription-automation.svg" alt="img">
+        </div>
+        <div>
+            <h1>Align Billing Workflow<br> with GTM Strategy</h1>
+            <p>Adjust price structures, product<br> bundles, discount management,<br> and recovery processes to<br> maximize revenue.</p>
+            <p>1. Price-modeling</p>
+            <p>2. Usage-based Billing</p>
+            <p>3. Plan & Product Catalog</p>
+            <p>4. 480+ Billing Scenarios</p>
+            <a href="#">Learn More ></a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/billing-experiments.svg" alt="img">
+        </div>
+        <div>
+            <h1>Drive Decisions with 360°<br> Revenue Reporting</h1>
+            <p>Recognize revenue accurately,<br> forecast business growth,<br> and plug leaks across your<br> order-to-revenue cycle with real-time<br> insights.</p>
+            <p>1. Deferred Revenue Reporting</p>
+            <p>2. Revenue Recognition</p>
+            <p>3. Churn Reporting</p>
+            <p>4. Report Builder</p>
+            <a href="#">Learn More ></a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/revenue-intelligence.svg" alt="img">
+        </div>
+        <div>
+            <h1>Scale Revenue Stack for<br> Each Stage of Growth</h1>
+            <p>Upgrade finance, accounting, CRM,<br> and more, on the revenue engine<br> that scales with you.</p>
+            <p>1. Sales, Revenue & Marketing</p>
+            <p>2. Accounting & Finance</p>
+            <p>3. Churn Reporting</p>
+            <p>4. Inventory & Logistics</p>
+            <a href="#">Learn More ></a>
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/home/coc/integration.svg" alt="img">
+        </div>
+    </div>
+
+    <div class="table">
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/535/images/g2-badge-collection/chargebee-leader-subscription-management-g2-spring.svg" alt="img">
+        </div>
+        <div>
+            <h1>Trusted partner in 4500+<br> growth stories...</h1>
+            <div>
+                <div>
+                    <h1>94%</h1>
+                    <p>Most likely to<br> recommend</p>
+                </div>
+                <div>
+                    <h1>1.3</h1>
+                    <p>Avg. months<br> to go live</p>
+                </div>
+                <div>
+                    <h1>#1</h1>
+                    <p>Subscription<br> Billing Software</p>
+                </div>
+                <div>
+                    <h1>98%</h1>
+                    <p>Rated 4+<br>stars on 5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bottom section -->
+
+    <div class="bot">
+        <div>
+            <h2>Product ></h2>
+            <p>Subscription Management</p>
+            <p>Recurring Billing and Invoicing</p>
+            <p>Recurring Payments</p>
+            <p>Accounting and Taxes</p>
+            <p>Saas Reporting</p>
+            <p>integrations</p>
+        </div>
+        <div>
+            <h2>Help & Support ></h2>
+            <p>Securoty</p>
+            <p>FAQs</p>
+            <p>Status</p>
+            <p>Accounting and Taxes</p>
+            <p>API doc</p>
+            <p>Sitemap</p>
+        </div>
+        <div>
+            <h2>Resources ></h2>
+            <p>Blog</p>
+            <p>Compare Payment Gateways</p>
+            <p>Recurring Payments</p>
+            <p>Tackling Payment Failures</p>
+            <p>Webinars</p>
+            <p>Events</p>
+            <p>Glossaries</p>
+            <p>Sub Academy</p>
+        </div>
+        <div>
+            <h2>Company ></h2>
+            <p>Customers</p>
+            <p>Partner</p>
+            <p>Careers</p>
+            <p>Press</p>
+            <p>Brand</p>
+            <p>Privacy Policy</p>
+        </div>
+    </div>
+
+    <div class="media">
+        <div>
+            <img src="./E (1).png" alt="logo">
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9qP1zdwtULNiMWEOf3tbyEo5w1SaeJv_OQ&usqp=CAU" alt="ss">
+        </div>
+    </div>
+
+</body>
+</html>
