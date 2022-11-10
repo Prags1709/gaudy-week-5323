@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login</title>
+ <style>
+    * {
+        background-color: aliceblue;
+    }
+
+  h1{
+   font-size: 40px;
+   font-weight: 900;
+   text-align: center;
+   color: orange;
+  }
+  h2{
+   text-align: center;font-weight: 900;
+   margin-top: 40px;
+   color: red;
+  }
+  .cont {
+   margin: auto;
+   width: 350px;
+   /* height: 500px; */
+   /* border: 1px solid black; */
+   padding: 10px 50px;
+   background-color: aliceblue;
+  }
+  #Email,#Mobile,#pass{
+   width: 100%;
+   padding: 10px;
+   border-radius: 8px;
+  }
+  #sub{
+   text-align: center;
+  }
+  input[type="submit"] {
+        background-color: orangered;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 20px;
+  }
+
+  img {
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+
+  h3 {
+    color: orangered;
+  }
+  
+ </style>
+</head>
+<body>
+ <h1>ExpoWide</h1>
+ <div>
+  <h2 >Login</h2>
+  
+  <div class="cont">
+    <div>
+        
+        <form >
+            <img src="./E (1).png" alt="logo"><br>
+            <h3>Login to ExpoWide!</h3>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="Email" placeholder="Enter Your Email"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="pass" placeholder="Enter Your Password"><br><br>
+           
+            <input type="submit" id="sub"value="Submit">
+            <p>ANNOUNCING SUMMER 2022 PRODUCT RELEASE</p>
+            <h3>Monetize Effectively to Tackle Market Turbulence</h3>
+        </form>
+    </div>
+  </div>
+  
+  
+
+ </div>
+</body>
+</html>
+<script>
+ let form=document.querySelector("form")
+ 
+ form.addEventListener("submit",function(event){
+    event.preventDefault()
+    let obj={
+        name:form.Email.value,
+        password:form.pass.value
+    }
+    let data;
+    let local=JSON.parse(localStorage.getItem("EW signing"));
+
+        for(i=0;i<local.length;i++){
+            data=local[i];
+        }
+
+    if(data.name==obj.name && data.password==obj.password){
+         alert("LOGIN SUCCESSFULLY");
+         window.location.href = "./homepage.html"
+    }else {
+         alert("INCORRECT DETAILS");
+    }
+  
+ })
+
+</script>
