@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers page</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    .nav {
+        display: flex;
+        height: 60px; 
+        /* border: 1px solid black; */
+        justify-content: space-between;
+        /* position: fixed; */
+        
+        
+    }
+
+  .nav>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    /* border: 1px solid red; */
+  }
+
+  .nav>div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    width: 23%;
+    /* border: 1px solid green; */
+  }
+
+  .nav>div:nth-child(2)>button {
+    margin-left: 20px;
+  }
+
+  .nav>div:nth-child(1)>div:nth-child(1) {
+    width: 20%;
+    /* border: 1px solid gold; */
+  }
+
+  .nav>div:nth-child(1)>div>img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .nav>div:nth-child(1)>div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    /* border: 1px solid purple; */
+  }
+
+  .nav>div:nth-child(1)>div:nth-child(2)>div {
+   font-size: 20px;
+  }
+
+  .ncont>button {
+    padding: 17px;
+    font-size: 16px;
+    border: 0;
+    background-color: white;
+  }
+
+  .ncont>button:hover {
+    background-color: rgb(243, 125, 125);
+  }
+
+  .dropbut {
+        /* background-color: #04AA6D; */
+        /* color: white; */
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        background-color: white;
+    }
+
+    .drop {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 280px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .dropdown-content a {
+        color: blue;
+        padding: 5px 7px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(192, 119, 188);
+        color: white;
+    }
+
+    .drop:hover .dropdown-content {
+        display: block;
+    }
+
+    .drop:hover .dropbut {
+        background-color: lightpink;
+        color: rebeccapurple;
+    }
+
+    .butn {
+        padding: 15px;
+        border-radius: 19px;
+        border: 0px;
+        font-weight: 600;
+        background-color: darkseagreen;
+        margin: 5px;
+    }
+
+    .butn:hover {
+        transform: scale(1.1);
+        transition: 200ms;
+    }
+
+    .nav-down {
+        height: 300px;
+        background-color: rgb(201, 233, 243);
+        padding-left: 100px;
+        padding-top: 100px;
+    }
+
+    .nav-down>h1 {
+        margin-bottom: 70px;
+    }
+
+    .nav-down>button {
+        padding: 15px;
+        font-size: 20px;
+        border: 2px solid orangered;
+        color: orangered;
+        background-color: rgb(201, 233, 243);;
+    }
+
+    .nav-down>button:hover {
+        transform: scale(1.05);
+        transition: 100ms;
+        border: 2px solid green;
+        color: green;
+    }
+
+    .nav-down>span {
+        margin-left: 100px;
+        color: blue;
+        font-size: 19px;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .top>div:nth-child(1) {
+        width: 40%;
+        margin: 0% 5%;
+    }
+    .top>div:nth-child(1)>h3 {
+       margin: 20px 0px;
+    }
+
+    .top-im1 {
+        width: 70%;
+    }
+    .top-im2 {
+        width: 30%;
+        border-radius: 50%;
+    }
+
+    .top>div:nth-child(2) {
+        width: 40%;
+        margin-left: 8%;
+    }
+    .top>div:nth-child(2) {
+        width: 100%;
+    }
+
+    .top>div:nth-child(2)>img {
+        margin-top: -250px;
+    }
+
+    /*------- image card 1-------- */
+
+    .img-card1 {
+        height: 55px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        margin: 150px 0px;
+    }
+
+    .img-card1>div {
+        height: 100%;
+        width: 16%;
+    }
+
+    .img-card1>div>img {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* --------top2 ---------*/
+
+    .top2 {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .top2>div:nth-child(2) {
+        width: 40%;
+    }
+    .top2>div:nth-child(2)>h3 {
+       margin: 20px 0px;
+    }
+
+    .top2-im1 {
+        width: 70%;
+    }
+    .top2-im2 {
+        width: 15%;
+        border-radius: 50%;
+    }
+
+    .top2>div:nth-child(1) {
+        width: 40%;
+        padding-top: 50px;
+    }
+
+    .top2>div:nth-child(1)>img {
+        width: 100%;
+    }
+
+     /*------- image card 2-------- */
+
+    .img-card2 {
+        height: 55px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        margin: 150px 0px;
+    }
+
+    .img-card2>div {
+        height: 100%;
+        width: 13%;
+    }
+
+    .img-card2>div>img {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .single-img {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 100px;
+    }
+
+    .single-img>img {
+        width: 100%;
+    }
+
+    /* grid part */
+
+    .grid {
+        width: 100%;
+        background-color: rgb(201, 233, 243);
+        padding-top: 75px;
+        padding-bottom: 75px;
+        margin-bottom: 60px;
+    }
+
+    .g-child {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .g-child>div {
+        background-color: white;
+        border-radius: 5px;
+        padding: 25px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .g-child>div:hover {
+        transform: scale(1.05);
+        transition: 500ms;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .g-child>div>h5 {
+        margin: 10px 0px;
+    }
+
+    .g-child>div>img {
+        width: 50%;
+    }
+
+
+    
+
+    @media screen and (min-width:450px) and (max-width: 1100px)  {
+        .pri {
+            display: none;
+        }
+        .top>div:nth-child(2) {
+            width: 40%;
+        }
+        .top>div:nth-child(2)>img {
+            width: 100%;
+        }
+        .top>div:nth-child(1) {
+            width: 40%;
+        }
+        .top>div:nth-child(2)>img {
+            margin-top: 0px;
+        }
+        
+
+    }
+
+    </style>
+</head>
+<body>
+    <!-- navigation -->
+    <div class="nav">
+        <div>
+            <div>
+                <img src="./E (1).png" alt="logo">
+            </div>
+            <div >
+                <div class="drop">
+                    <button class="dropbut">Product</button>
+                <div class="dropdown-content">
+                    <h4>subscription</h4>
+                    <a href="#">Subscription Management</a>
+                    <a href="#">Recurring Billing and Invoicing</a>
+                    <a href="#">Recurring Payments</a>
+                    <a href="#">Accounting and Taxes</a>
+                    <a href="#">Saas Reporting</a>
+                    <h4>Billing Automation</h4>
+                    <a href="#">Overview</a>
+                    <a href="#">Usage Based Billing</a>
+                    <a href="#">Quotes</a>
+                  </div>
+                </div>
+                <div class="ncont pri">
+                    <button>Pricing</button>
+                </div>
+                <div class="drop">
+                    <button class="dropbut">Solution</button>
+                <div class="dropdown-content">
+                    <h4>By Role</h4>
+                    <a href="#">Finance</a>
+                    <a href="#">Sales</a>
+                    <a href="#">RevOps</a>
+                    <h4>By Industry</h4>
+                    <a href="#">B2B SaaS</a>
+                    <a href="#">eCommerce</a>
+                    <a href="#">Publishing</a>
+                    <a href="#">OTT</a>
+                  </div>
+                </div>
+                <div class="ncont custo">
+                    <button>Customers</button>
+                </div>
+                <div class="drop">
+                    <button class="dropbut">resources</button>
+                <div class="dropdown-content">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Recurring Payments</a>
+                    <a href="#">Webinars</a>
+                    <h4>Business Model</h4>
+                    <a href="#">Event</a>
+                    <a href="#">Glossaries</a>
+                    <a href="#">Academy</a>
+                    <a href="#">Tackling</a>
+                  </div>
+                </div>
+                <!-- <div>Partners</div> -->
+            </div>
+        </div>
+        <div>
+            <!-- <a href="./login.html">Log in ></a> -->
+            <button class="butn login">Login ></button>
+        </div>
+    </div>
+    <div class="nav-down">
+       <h1>Chargebee powers <br>subscriptions for <br>businesses of all sizes.</h1>
+       <button>Sign up fir free</button><span>Talk to us!</span>
+    </div>
+
+    <!-- top section -->
+
+    <div class="top">
+        <div>
+            <img class="top-im1" src="https://webstatic.chargebee.com/assets/web/536/images/home/testimonial/cb-study.png" alt="stu">
+            <h3>... Integration was easy and the <i>customer support provided was excellent.</i> This is huge considering how deficient many players in the space are when ...</h3>
+            <img class="top-im2" src="https://webstatic.chargebee.com/assets/web/536/images/case-study/voitek.jpeg" alt="hu">
+            <p>Voitek Sobieszczanski, Director of Finance &<br> Operations</p>
+        </div>
+        <div>
+            <img src="./custo img.png" alt="cus">
+        </div>
+    </div>
+
+    <!-- top image card-1 -->
+
+    <div class="img-card1">
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/freshworks-light-bg.png" alt="lo">
+        </div>
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="loo">
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/linuxacademy-logo.png" alt="loho">
+        </div>
+        <div>
+            <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/fujitsu.png" alt="loho">
+        </div>
+    </div>
+
+    <!-- top section 2 -->
+
+    <div class="top2">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2pIZfxUtr2YZGpVGGIKbcPqGS8ZyTDxJWBA&usqp=CAU" alt="cus">
+        </div>
+        <div>
+            <img class="top2-im1" src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" alt="stu">
+            <h3>We didn't have another choice, we never had to<br> choose between Chargebee and another<br> provider. Chargebee was the clear winner.</h3>
+            <img class="top2-im2" src="https://webstatic.chargebee.com/assets/web/536/images/case-study/freedom-fred.png" alt="hu">
+            <p>Fred Stutzman, CEO, Freedom</p>
+        </div>
+    </div>
+
+    <!-- top image card-2 -->
+
+    <div class="img-card2">
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/percona.png" alt="lo">
+        </div>
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/cosmos.png" alt="loo">
+        </div>
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" alt="loho">
+        </div>
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/crew.svg" alt="loho">
+        </div>
+        <div>
+            <img src="https://www.chargebee.com/static/resources/customers/gigwell.png" alt="loho">
+        </div>
+    </div>
+
+    <!-- mid starts from here -->
+
+    <div class="single-img">
+        <img src="./nor.img.png" alt="cu">
+    </div>
+
+    <!-- mid grid part -->
+
+    <div class="grid">
+        <div class="g-child">
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/PqRaNiIAeF1HVRap2kQLr/fedb83c0091fc7a6c7a14d570e6a34ff/Powtoon-logo.png" alt="no">
+                <h5>Becoming a Chargebee partner enables <br>access to the world of subscriptions, <br>bringing increased value to merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/4KQMyH8cjSCpej40xWnVtP/24a9b5586ff08545c627722f44b4a925/ss_logo_blue.svg" alt="no">
+                <h5>merchant aggregators and marketplaces<br> around the world. Join our<br> Partner Ecosystem today.
+                </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6yKwwWw5YJV1utZd1s5Csi/64977da12343df28d31b6f4fd5844a28/Let-s_Talk_Interactive-logo.png" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1uAlrh0KGiORBrlK8DEgi8/709bd192fd1e622d87696b0825f29a94/Refocus-logo.png" alt="no">
+                <h5>We believe a diverse payments ecosystem<br> helps businesses of all types<br> and sizes. This means fostering<br> an environment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/5rQOlwAzI5yq3EMDem7ONr/d3e02a4918490b0956e2f6a0a0a2e407/Sendinblue-logo.png" alt="no">
+                <h5>that offers connectivity between<br> Chargebee's payment service<br> partners and our global <br>network of merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6Pnnx8CmE2qE8gYjwrZKLP/983716251828f2eadd01c852f4e764c3/Jeune_Afrique-logo.png" alt="no">
+                <h5>Through customized solutions and <br>personalized integration support,<br> Chargebee's Independent Software<br> Vendors </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/7tmqeS4YprL5vB2Dl7au09/9b3c6530fe5a638b9c1feeb1ebdc8647/Drake_Software-logo.png" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6QGdqstkUp9ay2gi4BKYu7/8f2dec71597399c32dc53c892b891fa4/Unbounce-logo.png" alt="no">
+                <h5>deliver unique solutions that<br> provide additional functionality that <br>helps grow the global network of merchants </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2a3Afd7k1PCGjJZO3w7KS0/81b2958e306d1ec1d05b29148ad34086/TouchNote-logo.png" alt="no">
+                <h5>Chargebee's Solutions Partners<br> are a network of certified <br>agencies and consultancies who <br>provide strategic and operational </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/3cTmYSA4SnkP8eX6v4wwQv/cc884339d4b83da83338a240a2d77f20/ClickFunnels-logo.png" alt="no">
+                <h5> support to the growing economy <br>of Subscription businesses. <br>If you work with businesses<br> employing</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/URPmg8IREgRROn2XGP1e7/2f03fadc22c285a4000fe190724e291c/Vital_Proteins-logo.png" alt="no">
+                <h5> a business subscription model,<br> apply to join our Solution <br>Partners network today.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2En2xankaFJOuY1AOMFgQb/05216dffdbd6bf534ba1fcb7d6735d1d/Freshly-logo.png" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+            <!-- 12 -->
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1guqVnCk6AF398SeSxLHzY/1b7a35e59ec0214c8ca4d1307858f4a2/Kabo-logo.png" alt="no">
+                <h5>Becoming a Chargebee partner enables <br>access to the world of subscriptions, <br>bringing increased value to merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6EjDOSaydLMcfye4mbYJkE/090d82db5a4055c9bea8f5deb339db26/Konica_Minolta-logo.png" alt="no">
+                <h5>merchant aggregators and marketplaces<br> around the world. Join our<br> Partner Ecosystem today.
+                </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6SBy6AbEJTiRCFU8azB8zR/d204504a7702c152ff1de9e39b1433b0/TokyoTreat-logo.png" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/4Vw9YapaAkmNgTpHKNUr6V/73f874eab4e7b508b6e96a6cf63a19ad/download.jpeg" alt="no">
+                <h5>We believe a diverse payments ecosystem<br> helps businesses of all types<br> and sizes. This means fostering<br> an environment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/115KJfTy7cOqoxv52EvpeF/1f78746b783fa2e600eb4c8a806a9e35/Study-dot-com-logo.png" alt="no">
+                <h5>that offers connectivity between<br> Chargebee's payment service<br> partners and our global <br>network of merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/7mbC3ZQRzMvAPPl9Jip162/ecc92de16ecf387b21831665aa5d2879/Slidebean-logo.png" alt="no">
+                <h5>Through customized solutions and <br>personalized integration support,<br> Chargebee's Independent Software<br> Vendors </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1dgwHDYQBk6goEDt3dc5L6/accafa616f1a246920bb0ce9d167d025/Deliverr_svg.svg" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6iyYfrd6SI7vbzdXJZLxdp/6cc8b77fee49f8f4ca3e60bf0a43e795/RangeMe-logo.jpeg" alt="no">
+                <h5>deliver unique solutions that<br> provide additional functionality that <br>helps grow the global network of merchants </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2jRCXcODogqymlRLS20jy9/282bcbebc623cd2d54e393858d49a13d/Zenchef-logo.png" alt="no">
+                <h5>Chargebee's Solutions Partners<br> are a network of certified <br>agencies and consultancies who <br>provide strategic and operational </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/69VgNoqWVJCPX4Moj5zYHF/cfc6938ecf0bd88cbf271d4983b7bfcc/Livestorm-logo.png" alt="no">
+                <h5> support to the growing economy <br>of Subscription businesses. <br>If you work with businesses<br> employing</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/4of1bxaJrX68ipTZapjq2X/299cf0922731602286cc8ee87cfde96d/Freedom-logo.png" alt="no">
+                <h5> a business subscription model,<br> apply to join our Solution <br>Partners network today.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1CuJbolhOOZQYSI7CyItlK/6592796c15f7b15a575a2acdbd6e69b7/codacy.svg" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+
+            <!-- 12 -->
+
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2Fi8riH5IgVX4alX01PxSx/01133d776df40d330b7765f632b30e4e/Whiteboard_CRM-logo.png" alt="no">
+                <h5>Becoming a Chargebee partner enables <br>access to the world of subscriptions, <br>bringing increased value to merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/mWTkQj5XaaL1IVb5ENzDT/b28859b1e219b6d501218a2c1ceaac3d/fishburners.png" alt="no">
+                <h5>merchant aggregators and marketplaces<br> around the world. Join our<br> Partner Ecosystem today.
+                </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/0RVVAtHwZmF6BsY2y8Dhm/7e326ea058824bbe910878ce44cebfb3/Proxyclick-logo.jpeg" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/7LF6W9atss01PwHWml0pZQ/948428b5fd063a72022dad73a6001ebb/GetAccept-logo.png" alt="no">
+                <h5>We believe a diverse payments ecosystem<br> helps businesses of all types<br> and sizes. This means fostering<br> an environment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/nIhhI2E9kNzLY7wCyJNkp/eca813b5d5f9698beab8db5bad434799/Jiobit-logo.png" alt="no">
+                <h5>that offers connectivity between<br> Chargebee's payment service<br> partners and our global <br>network of merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/4a5UJTIKQqN2gFGwZQLLX0/4e99443bd92a2e889f72eb8673ff420d/AX_Semantics-logo.png" alt="no">
+                <h5>Through customized solutions and <br>personalized integration support,<br> Chargebee's Independent Software<br> Vendors </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/5xBuFa17XBobR62DEX3QdV/2e4a2b71fd36d57dc8066d6203c63906/Voxloud-logo.png" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/7esCDhih3oO653VejGUGW8/362400efb20f9a733a2ceb51b2867f81/BitGym-logo.png" alt="no">
+                <h5>deliver unique solutions that<br> provide additional functionality that <br>helps grow the global network of merchants </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2EJFWsboqeonvu4f7tuj5n/8851da2c848df47ecf9583133ed8405e/ScreenCloud-logo.png" alt="no">
+                <h5>Chargebee's Solutions Partners<br> are a network of certified <br>agencies and consultancies who <br>provide strategic and operational </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/SF5OtvI5F7PeWYUhYwot8/9537c6ba98149ba642806e47fbec5a7a/HelloHQ-logo.svg" alt="no">
+                <h5> support to the growing economy <br>of Subscription businesses. <br>If you work with businesses<br> employing</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/47dIZZC3IwHPIPY2MdQ82F/dd2f19e6ff999fabe3df19db15ca4d9c/Screencastify-logo_1.png" alt="no">
+                <h5> a business subscription model,<br> apply to join our Solution <br>Partners network today.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/3OucyY8d2ngAW8Q7sdvYHI/b58e60613c56ecf632d49f51438df745/animalz.svg" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+            <div>
+                <img src="https://webstatic.chargebee.com/assets/web/536/images/case-study/hoxtonmix-logo.png" alt="no">
+                <h5>Chargebee's Solutions Partners<br> are a network of certified <br>agencies and consultancies who <br>provide strategic and operational </h5>
+            </div>
+            <div>
+                <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/sharetribe.svg" alt="no">
+                <h5> support to the growing economy <br>of Subscription businesses. <br>If you work with businesses<br> employing</h5>
+            </div>
+            <div>
+                <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/vinylmeplease-new.png" alt="no">
+                <h5> a business subscription model,<br> apply to join our Solution <br>Partners network today.</h5>
+            </div>
+            <div>
+                <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/guava-pass.png" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6QGdqstkUp9ay2gi4BKYu7/8f2dec71597399c32dc53c892b891fa4/Unbounce-logo.png" alt="no">
+                <h5>deliver unique solutions that<br> provide additional functionality that <br>helps grow the global network of merchants </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2a3Afd7k1PCGjJZO3w7KS0/81b2958e306d1ec1d05b29148ad34086/TouchNote-logo.png" alt="no">
+                <h5>Chargebee's Solutions Partners<br> are a network of certified <br>agencies and consultancies who <br>provide strategic and operational </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/3cTmYSA4SnkP8eX6v4wwQv/cc884339d4b83da83338a240a2d77f20/ClickFunnels-logo.png" alt="no">
+                <h5> support to the growing economy <br>of Subscription businesses. <br>If you work with businesses<br> employing</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/URPmg8IREgRROn2XGP1e7/2f03fadc22c285a4000fe190724e291c/Vital_Proteins-logo.png" alt="no">
+                <h5> a business subscription model,<br> apply to join our Solution <br>Partners network today.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/2En2xankaFJOuY1AOMFgQb/05216dffdbd6bf534ba1fcb7d6735d1d/Freshly-logo.png" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+            <!-- 12 -->
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1guqVnCk6AF398SeSxLHzY/1b7a35e59ec0214c8ca4d1307858f4a2/Kabo-logo.png" alt="no">
+                <h5>Becoming a Chargebee partner enables <br>access to the world of subscriptions, <br>bringing increased value to merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6EjDOSaydLMcfye4mbYJkE/090d82db5a4055c9bea8f5deb339db26/Konica_Minolta-logo.png" alt="no">
+                <h5>merchant aggregators and marketplaces<br> around the world. Join our<br> Partner Ecosystem today.
+                </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6SBy6AbEJTiRCFU8azB8zR/d204504a7702c152ff1de9e39b1433b0/TokyoTreat-logo.png" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/4Vw9YapaAkmNgTpHKNUr6V/73f874eab4e7b508b6e96a6cf63a19ad/download.jpeg" alt="no">
+                <h5>We believe a diverse payments ecosystem<br> helps businesses of all types<br> and sizes. This means fostering<br> an environment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/115KJfTy7cOqoxv52EvpeF/1f78746b783fa2e600eb4c8a806a9e35/Study-dot-com-logo.png" alt="no">
+                <h5>that offers connectivity between<br> Chargebee's payment service<br> partners and our global <br>network of merchants</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/7mbC3ZQRzMvAPPl9Jip162/ecc92de16ecf387b21831665aa5d2879/Slidebean-logo.png" alt="no">
+                <h5>Through customized solutions and <br>personalized integration support,<br> Chargebee's Independent Software<br> Vendors </h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/1dgwHDYQBk6goEDt3dc5L6/accafa616f1a246920bb0ce9d167d025/Deliverr_svg.svg" alt="no">
+                <h5>Payment service providers (PSP)<br> help manage the entire payment<br> transaction from the moment your<br> customer pays to the moment</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/6iyYfrd6SI7vbzdXJZLxdp/6cc8b77fee49f8f4ca3e60bf0a43e795/RangeMe-logo.jpeg" alt="no">
+                <h5>deliver unique solutions that<br> provide additional functionality that <br>helps grow the global network of merchants </h5>
+            </div>
+            <div>
+                <img src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/freshdesk.png" alt="no">
+                <h5>Chargebee works with a variety of<br> Referral Partners who believe in<br> our mission of creating a more<br> connected subscription world.</h5>
+            </div>
+            <div>
+                <img src="https://images.ctfassets.net/a7hvy8sclsq6/115KJfTy7cOqoxv52EvpeF/1f78746b783fa2e600eb4c8a806a9e35/Study-dot-com-logo.png" alt="no">
+                <h5>that offers connectivity between<br> Chargebee's payment service<br> partners and our global <br>network of merchants</h5>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+<script>
+
+</script>
