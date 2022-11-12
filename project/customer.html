@@ -4,354 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="custo.css">
     <title>Customers page</title>
-    <style>
-        * {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-    .nav {
-        display: flex;
-        height: 60px; 
-        /* border: 1px solid black; */
-        justify-content: space-between;
-        /* position: fixed; */
-        
-        
-    }
-
-  .nav>div:nth-child(1) {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    /* border: 1px solid red; */
-  }
-
-  .nav>div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    width: 23%;
-    /* border: 1px solid green; */
-  }
-
-  .nav>div:nth-child(2)>button {
-    margin-left: 20px;
-  }
-
-  .nav>div:nth-child(1)>div:nth-child(1) {
-    width: 20%;
-    /* border: 1px solid gold; */
-  }
-
-  .nav>div:nth-child(1)>div>img {
-    height: 100%;
-    width: 100%;
-  }
-
-  .nav>div:nth-child(1)>div:nth-child(2) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    /* border: 1px solid purple; */
-  }
-
-  .nav>div:nth-child(1)>div:nth-child(2)>div {
-   font-size: 20px;
-  }
-
-  .ncont>button {
-    padding: 17px;
-    font-size: 16px;
-    border: 0;
-    background-color: white;
-  }
-
-  .ncont>button:hover {
-    background-color: rgb(243, 125, 125);
-  }
-
-  .dropbut {
-        /* background-color: #04AA6D; */
-        /* color: white; */
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        background-color: white;
-    }
-
-    .drop {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 280px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        padding: 10px;
-    }
-
-    .dropdown-content a {
-        color: blue;
-        padding: 5px 7px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: rgb(192, 119, 188);
-        color: white;
-    }
-
-    .drop:hover .dropdown-content {
-        display: block;
-    }
-
-    .drop:hover .dropbut {
-        background-color: lightpink;
-        color: rebeccapurple;
-    }
-
-    .butn {
-        padding: 15px;
-        border-radius: 19px;
-        border: 0px;
-        font-weight: 600;
-        background-color: darkseagreen;
-        margin: 5px;
-    }
-
-    .butn:hover {
-        transform: scale(1.1);
-        transition: 200ms;
-    }
-
-    .nav-down {
-        height: 300px;
-        background-color: rgb(201, 233, 243);
-        padding-left: 100px;
-        padding-top: 100px;
-    }
-
-    .nav-down>h1 {
-        margin-bottom: 70px;
-    }
-
-    .nav-down>button {
-        padding: 15px;
-        font-size: 20px;
-        border: 2px solid orangered;
-        color: orangered;
-        background-color: rgb(201, 233, 243);;
-    }
-
-    .nav-down>button:hover {
-        transform: scale(1.05);
-        transition: 100ms;
-        border: 2px solid green;
-        color: green;
-    }
-
-    .nav-down>span {
-        margin-left: 100px;
-        color: blue;
-        font-size: 19px;
-    }
-
-    .top {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-
-    .top>div:nth-child(1) {
-        width: 40%;
-        margin: 0% 5%;
-    }
-    .top>div:nth-child(1)>h3 {
-       margin: 20px 0px;
-    }
-
-    .top-im1 {
-        width: 70%;
-    }
-    .top-im2 {
-        width: 30%;
-        border-radius: 50%;
-    }
-
-    .top>div:nth-child(2) {
-        width: 40%;
-        margin-left: 8%;
-    }
-    .top>div:nth-child(2) {
-        width: 100%;
-    }
-
-    .top>div:nth-child(2)>img {
-        margin-top: -250px;
-    }
-
-    /*------- image card 1-------- */
-
-    .img-card1 {
-        height: 55px;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: space-evenly;
-        margin: 150px 0px;
-    }
-
-    .img-card1>div {
-        height: 100%;
-        width: 16%;
-    }
-
-    .img-card1>div>img {
-        height: 100%;
-        width: 100%;
-    }
-
-    /* --------top2 ---------*/
-
-    .top2 {
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-
-    .top2>div:nth-child(2) {
-        width: 40%;
-    }
-    .top2>div:nth-child(2)>h3 {
-       margin: 20px 0px;
-    }
-
-    .top2-im1 {
-        width: 70%;
-    }
-    .top2-im2 {
-        width: 15%;
-        border-radius: 50%;
-    }
-
-    .top2>div:nth-child(1) {
-        width: 40%;
-        padding-top: 50px;
-    }
-
-    .top2>div:nth-child(1)>img {
-        width: 100%;
-    }
-
-     /*------- image card 2-------- */
-
-    .img-card2 {
-        height: 55px;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: space-evenly;
-        margin: 150px 0px;
-    }
-
-    .img-card2>div {
-        height: 100%;
-        width: 13%;
-    }
-
-    .img-card2>div>img {
-        height: 100%;
-        width: 100%;
-    }
-    
-    .single-img {
-        width: 80%;
-        margin: auto;
-        padding-bottom: 100px;
-    }
-
-    .single-img>img {
-        width: 100%;
-    }
-
-    /* grid part */
-
-    .grid {
-        width: 100%;
-        background-color: rgb(201, 233, 243);
-        padding-top: 75px;
-        padding-bottom: 75px;
-        margin-bottom: 60px;
-    }
-
-    .g-child {
-        width: 80%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: auto;
-        gap: 20px;
-    }
-
-    .g-child>div {
-        background-color: white;
-        border-radius: 5px;
-        padding: 25px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-
-    .g-child>div:hover {
-        transform: scale(1.05);
-        transition: 500ms;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .g-child>div>h5 {
-        margin: 10px 0px;
-    }
-
-    .g-child>div>img {
-        width: 50%;
-    }
-
-
-    
-
-    @media screen and (min-width:450px) and (max-width: 1100px)  {
-        .pri {
-            display: none;
-        }
-        .top>div:nth-child(2) {
-            width: 40%;
-        }
-        .top>div:nth-child(2)>img {
-            width: 100%;
-        }
-        .top>div:nth-child(1) {
-            width: 40%;
-        }
-        .top>div:nth-child(2)>img {
-            margin-top: 0px;
-        }
-        
-
-    }
-
-    </style>
 </head>
 <body>
     <!-- navigation -->
     <div class="nav">
         <div>
             <div>
-                <img src="./E (1).png" alt="logo">
+                <img class="logo" src="./E (1).png" alt="logo">
             </div>
             <div >
                 <div class="drop">
@@ -370,7 +31,7 @@
                   </div>
                 </div>
                 <div class="ncont pri">
-                    <button>Pricing</button>
+                    <button class="home">Home</button>
                 </div>
                 <div class="drop">
                     <button class="dropbut">Solution</button>
@@ -413,7 +74,7 @@
     </div>
     <div class="nav-down">
        <h1>Chargebee powers <br>subscriptions for <br>businesses of all sizes.</h1>
-       <button>Sign up fir free</button><span>Talk to us!</span>
+       <button class="sign">Sign up fir free</button><span>Talk to us!</span>
     </div>
 
     <!-- top section -->
@@ -425,7 +86,7 @@
             <img class="top-im2" src="https://webstatic.chargebee.com/assets/web/536/images/case-study/voitek.jpeg" alt="hu">
             <p>Voitek Sobieszczanski, Director of Finance &<br> Operations</p>
         </div>
-        <div>
+        <div id="add">
             <img src="./custo img.png" alt="cus">
         </div>
     </div>
@@ -724,11 +385,102 @@
         </div>
     </div>
 
+     <!-- linear gradient box -->
+
+     <div class="cont">
+        <div class="c1">
+            <h3>Get a Demo Customized to Your <br>Subscription Workflow</h3>
+            <div>
+                <div>
+                    <h3>Put your email for Explore</h3>
+                </div>
+                <div>
+                    <button>Get a Demo</button>
+                </div>
+            </div>
+        </div>
+        <div class="c2">
+            <div class="c2-A">
+                <div>
+                    <img src="https://webstatic.chargebee.com/assets/web/536/images/footer/robin-lambert.png" alt="man">
+                </div>
+                <p>Using Chargebee is also one less <br>area we have to worry about as we<br> scale. We know that it'll <br>adapt to most if not all situations<br> that'll come up in the <br>future.</p>
+                <h4>Robin Lambert,</h4>
+                <p>Co-founder & CPO, <span>Livestorm</span></p>
+            </div>
+            <div class="c2-B">
+                <div>
+                    <img src="https://webstatic.chargebee.com/assets/web/536/images/footer/calendly.svg" alt="log">
+                </div>
+                <div>
+                    <img src="https://webstatic.chargebee.com/assets/web/536/images/footer/okta.svg" alt="log">
+                </div>
+                <div>
+                    <img src="https://webstatic.chargebee.com/assets/web/536/images/footer/freshworks.svg" alt="log">
+                </div>
+                <div>
+                    <img src="https://webstatic.chargebee.com/assets/web/536/images/footer/getaccept.svg" alt="log">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- foot of page -->
+
+    <div class="bot">
+        <div>
+            <h2 class="boom">Product ></h2>
+            <p>Subscription Management</p>
+            <p>Recurring Billing and Invoicing</p>
+            <p>Recurring Payments</p>
+            <p>Accounting and Taxes</p>
+            <p>Saas Reporting</p>
+            <p>integrations</p>
+        </div>
+        <div>
+            <h2 class="boom">Help & Support ></h2>
+            <p>Securoty</p>
+            <p>FAQs</p>
+            <p>Status</p>
+            <p>Accounting and Taxes</p>
+            <p>API doc</p>
+            <p>Sitemap</p>
+        </div>
+        <div>
+            <h2 class="boom">Resources ></h2>
+            <p>Blog</p>
+            <p>Compare Payment Gateways</p>
+            <p>Recurring Payments</p>
+            <p>Tackling Payment Failures</p>
+            <p>Webinars</p>
+            <p>Events</p>
+            <p>Glossaries</p>
+            <p>Sub Academy</p>
+        </div>
+        <div>
+            <h2 class="boom">Company ></h2>
+            <p>Customers</p>
+            <p>Partner</p>
+            <p>Careers</p>
+            <p>Press</p>
+            <p>Brand</p>
+            <p>Privacy Policy</p>
+        </div>
+    </div>
+
+    <div class="media">
+        <div>
+            <img src="./E (1).png" alt="logo">
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9qP1zdwtULNiMWEOf3tbyEo5w1SaeJv_OQ&usqp=CAU" alt="ss">
+        </div>
+    </div>
+
 
 
 </body>
 </html>
 
-<script>
-
-</script>
+<script src="custo.js"></script>

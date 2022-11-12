@@ -1,0 +1,136 @@
+* {
+    background-color: lightcyan;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+font-size: 40px;
+font-weight: 900;
+text-align: center;
+color: orange;
+}
+h2{
+text-align: center;font-weight: 900;
+margin-top: 40px;
+color: red;
+}
+div{
+margin: auto;
+width: 350px;
+/* height: 500px; */
+/* border: 1px solid black; */
+padding: 10px 50px;
+background-color: lightcyan;
+}
+#Email,#Mobile,#pass{
+width: 100%;
+padding: 10px;
+border-radius: 8px;
+box-sizing: border-box;
+}
+
+#Email:hover, #Mobile:hover, #pass:hover {
+transform: scale(1.03);
+transition: 200ms;
+}
+#sub{
+text-align: center;
+
+}
+input[type="submit"] {
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+transform: scale(1.03);
+transition: 200ms;
+}
+
+img {
+display: block;
+width: 80%;
+margin: auto;
+}
+
+h3 {
+color: orangered;
+}
+
+.slider {
+        /* border: 1px solid rebeccapurple; */
+        height: 100px;
+        width: 80%;
+        margin: auto;
+        position: relative;
+        width: 90%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+    }
+
+    .slide_track {
+        /* border: 1px solid yellowgreen; */
+        display: flex;
+        width: calc(100px*22);
+        animation: scroll 60s linear infinite;
+    }
+
+    .slide_track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 11));
+        }
+    }
+
+    .slide {
+        /* border: 1px solid olive; */
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        perspective: 100px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    img:hover {
+        transform: translateZ(20px);
+    }
+
+    .slider::before,
+    .slider::after {
+        background: linear-gradient(to right, rgba(255, 255, 255,1) 0%,
+        rgba(255, 255, 255, 0) 100%);
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        z-index: 2;
+    }
+
+    .slider::before {
+        left: 0;
+        top: 0;
+    }
+
+    .slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
