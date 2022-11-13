@@ -15,5 +15,5 @@ but3.addEventListener("click",function(){
 
 let but4 = document.querySelector(".logo")
  but4.addEventListener("click",function(){
-    window.location.href="./homepage.html";
+    window.location.href="./index.html";
 });
