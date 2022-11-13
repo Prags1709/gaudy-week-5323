@@ -15,9 +15,11 @@ let form=document.querySelector("form")
 
     if(data.name==obj.name && data.password==obj.password){
          alert("LOGIN SUCCESSFULLY");
-         window.location.href = "./homepage.html"
+         window.location.href = "./index.html"
     }else {
-         alert("INCORRECT DETAILS");
+         alert("User Data not Found");
+         form.Email.value = "";
+         form.pass.value = "";
     }
   
  })

@@ -355,6 +355,7 @@
         background-image: linear-gradient(190deg, rgb(194, 135, 135) , rgb(68, 206, 211));
         position: sticky;
         top: 0;
+        z-index: 1;
     }
 
     .mid>div {

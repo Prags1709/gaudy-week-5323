@@ -10,10 +10,10 @@ let btn = document.querySelector(".sign")
 
     let but3 = document.querySelector(".logo")
      but3.addEventListener("click",function(){
-        window.location.href="./homepage.html";
+        window.location.href="./index.html";
     });
 
     let but4 = document.querySelector(".home")
      but4.addEventListener("click",function(){
-        window.location.href="./homepage.html";
+        window.location.href="./index.html";
     });

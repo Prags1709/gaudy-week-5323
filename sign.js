@@ -13,7 +13,7 @@ let form=document.querySelector("form")
     data.push(obj)
     localStorage.setItem("EW signing",JSON.stringify(data))
     alert("Your Expowide Account Created")
-    window.location.href="./homepage.html"
+    window.location.href="./index.html"
   }
  
  })
